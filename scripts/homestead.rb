@@ -112,6 +112,9 @@ class Homestead
           if (site.has_key?("hhvm") && site["hhvm"])
             s.path = scriptDir + "/serve-hhvm.sh"
             s.args = [site["map"], site["to"], site["port"] ||= "80", site["ssl"] ||= "443"]
+          elsif (site.has_key?("django") && site["django"])
+            s.path = scriptDir + "/serve-django.sh"
+            s.args = [site["map"], site["to"], site["port"] ||= "80", site["ssl"] ||= "443"]
           else
             s.path = scriptDir + "/serve.sh"
             s.args = [site["map"], site["to"], site["port"] ||= "80", site["ssl"] ||= "443"]
