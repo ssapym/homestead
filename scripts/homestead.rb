@@ -8,6 +8,7 @@ class Homestead
 
     # Prevent TTY Errors
     config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+    config.ssh.port = settings["ssh_port"] ||= 22
 
     # Configure The Box
     config.vm.box = "laravel/homestead"
