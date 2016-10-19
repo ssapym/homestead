@@ -118,7 +118,7 @@ class Homestead
             s.args = [site["map"], site["to"], site["port"] ||= "80", site["ssl"] ||= "443"]
           else
             s.path = scriptDir + "/serve.sh"
-            s.args = [site["map"], site["to"], site["port"] ||= "80", site["ssl"] ||= "443"]
+            s.args = [site["map"], site["to"], site["port"] ||= "80", site["ssl"] ||= "443", site["opendir"] ||= ""]
           end
       end
     end
